@@ -3,3 +3,12 @@
 <article>
   <%= @todo.description %>
 </article>
+
+<p>
+  <%= link_to 'Edit', edit_todo_path(@todo) %> |
+  <%= link_to 'Delete', @todo, method: :delete, data: { confirm: 'Are you sure?' } %>
+</p>
+
+<p>
+  <%= link_to 'Task List', todos_path %>
+</p>
