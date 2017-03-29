@@ -2,7 +2,7 @@
 
 <% @todos.each do |task| %>
   <article>
-    <h5><%= link_to "#{task.name} (#{task.id})", task %></h5>
+    <h5><%= link_to "#{task.name} (#{task.id})", task %> <%= link_to 'EDIT', edit_todo_path(task) %></h5>
     <p><%= task.description %></p>
   </article>
 <% end %>
