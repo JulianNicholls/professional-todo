@@ -39,6 +39,16 @@ class TodosController < ApplicationController
     end
   end
 
+  def destroy
+    if @todo.destroy
+      flash[:notice] = 'The task was deleted successfully'
+      redirect_to todos_path
+    else
+      flash.now[:error] = 'The task could not be updated'
+      redirect_back
+    end
+  end
+
   private
 
   def todo_params
