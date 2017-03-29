@@ -1,0 +1,24 @@
+<h1>Add a Task</h1>
+
+<% if @todo.errors.any? %>
+  <h4>The task could not be saved due to these errors:</h4>
+  <ol>
+  <% @todo.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+  </ol>
+<% end %>
+
+<%= form_for @todo do |f| %>
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </p>
+
+  <%= f.submit "Add Task" %>
+<% end %>

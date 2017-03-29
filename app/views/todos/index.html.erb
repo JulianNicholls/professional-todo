@@ -1,0 +1,8 @@
+<h1>Tasks</h1>
+
+<% @todos.each do |task| %>
+  <article>
+    <h5><%= link_to "#{task.name} (#{task.id})", task %></h5>
+    <p><%= task.description %></p>
+  </article>
+<% end %>
