@@ -1,6 +1,6 @@
 <% if @todo.errors.any? %>
   <div class="errors">
-    <h4>The task could not be saved due to these errors:</h4>
+    <h4>The task could not be saved due to these <%= pluralize(@todo.errors.count, 'error') %>:</h4>
     <ol>
     <% @todo.errors.full_messages.each do |msg| %>
       <li><%= msg %></li>
@@ -11,14 +11,14 @@
 
 <%= form_for @todo do |f| %>
   <p>
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.label :name %>
+    <%= f.text_field :name, placeholder: 'What do you need to do?', autofocus: true %>
   </p>
 
   <p>
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
+    <%= f.label :description %>
+    <%= f.text_area :description, rows: 10, placeholder: 'How are you going to perform this task?' %>
   </p>
 
-  <%= f.submit (@todo.new_record? ? 'Add Task' : 'Update Task') %>
+  <%= f.submit (@todo.new_record? ? 'Add Task' : 'Update Task'), class: 'btn' %>
 <% end %>

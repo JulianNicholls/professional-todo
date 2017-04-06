@@ -1,12 +1,12 @@
 <h1><%= @todo.name %></h1>
 
 <article>
-  <%= @todo.description %>
+  <%= simple_format(@todo.description) %>
 </article>
 
-<p>
-  <%= link_to 'Edit', edit_todo_path(@todo) %> |
-  <%= link_to 'Delete', @todo, method: :delete, data: { confirm: 'Are you sure?' } %>
+<p class="actions">
+  <%= link_to 'Edit', edit_todo_path(@todo), class: 'btn' %>
+  <%= link_to 'Delete', @todo, class: 'btn', method: :delete, data: { confirm: 'Are you sure?' } %>
 </p>
 
 <p>
