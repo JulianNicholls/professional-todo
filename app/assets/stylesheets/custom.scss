@@ -1,0 +1,128 @@
+
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background: #fff;
+  color: #111;
+}
+
+header {
+  padding: 10px 0;
+  background: #311B92;
+  overflow: auto;
+
+  .brand {
+    font-size: 1.4em;
+    margin-right: 2em;
+    margin-top: 0;
+    color: #fff;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      margin-top: 0.2em;
+      display: inline-block;
+      float: left;
+      margin-left: 2em;
+    }
+
+    li.pull-right {
+      margin-right: 2em;
+      margin-left: 0;
+    }
+  }
+
+  a, a:visited {
+    color: #ddd;
+    border-radius: 3px;
+
+    &:hover {
+      text-decoration: none;
+      color: #eee;
+    }
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+a {
+  color: #EDE7F6;        // Deep Purple 800
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:visited {
+    color: #5E35B1;        // Deep Purple 600
+  }
+}
+
+div.container {
+  width: 960px;
+  margin: 20px auto;
+}
+
+article {
+  background: #EDE7F6;      // Deep Purple 50
+  margin-bottom: 0.4em;
+  padding: 0.1em 1em 1em 1em;
+  overflow: auto;
+}
+
+label {
+  float: left;
+  width: 10em;
+}
+
+input[type="text"], input[type="email"], input[type="password"],
+textarea {
+  font-size: 1em;
+  padding: 3px 5px;
+  width: 40em;
+}
+
+.errors {
+  background: #f88;
+  color: #800;
+  padding: 0.2em 1em;
+}
+
+.actions {
+  float: right;
+}
+
+.btn {
+  background: #311B92;      // Deep Purple 900
+  padding: 6px 8px;
+  color: #fff;
+  border-radius: 3px;
+
+  &:hover {
+    text-decoration: none;
+    background: #5E35B1;    // Deep Purple 600
+  }
+
+  &:visited {
+    color: #fff;
+  }
+}
+
+div.alert {
+  margin-top: 0.5em;
+  padding: 0.5em 1em;
+  color: white;
+}
+
+.alert-success {
+  background: #33691E;     // Light Green 900
+}
+
+.alert-danger {
+  background: #B71C1C;     // Red 900
+}
