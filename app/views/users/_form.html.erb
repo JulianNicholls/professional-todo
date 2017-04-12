@@ -1,6 +1,6 @@
 <% if @user.errors.any? %>
   <div class="errors">
-    <h4>The user could not be saved due to these <%= pluralize(@user.errors.count, 'error') %>:</h4>
+    <h4>The user could not be saved due to <%= pluralize(@user.errors.count, 'error') %>:</h4>
     <ol>
     <% @user.errors.full_messages.each do |msg| %>
       <li><%= msg %></li>

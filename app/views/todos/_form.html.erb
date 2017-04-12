@@ -1,6 +1,6 @@
 <% if @todo.errors.any? %>
   <div class="errors">
-    <h4>The task could not be saved due to these <%= pluralize(@todo.errors.count, 'error') %>:</h4>
+    <h4>The task could not be saved due to <%= pluralize(@todo.errors.count, 'error') %>:</h4>
     <ol>
     <% @todo.errors.full_messages.each do |msg| %>
       <li><%= msg %></li>
