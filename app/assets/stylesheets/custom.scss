@@ -117,12 +117,15 @@ div.alert {
   margin-top: 0.5em;
   padding: 0.5em 1em;
   color: white;
+  border-radius: 5px;
 }
 
 .alert-success {
-  background: #33691E;     // Light Green 900
+  background: #558B2F;      // Light Green 800
+  border-color: #33691E;    // Light Green 900
 }
 
 .alert-danger {
-  background: #B71C1C;     // Red 900
+  background: #C62828;      // Red 800
+  border-color: #B71C1C;    // Red 900
 }
