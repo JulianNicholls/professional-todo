@@ -4,7 +4,12 @@
     <li><%= link_to 'Users', users_path %></li>
     <li><%= link_to 'Tasks', todos_path %></li>
 
-    <li class="pull-right"><%= link_to 'Sign up', signup_path %></li>
-    <li class="pull-right"><%= link_to 'Log in', '#' %></li>
+    <% if logged_in? %>
+      <li class="pull-right"><%= link_to 'Log out', logout_path, method: :delete %></li>
+      <li class="pull-right"><%= link_to 'Edit Profile', edit_user_path(current_user) %></li>
+    <% else %>
+      <li class="pull-right"><%= link_to 'Sign up', signup_path %></li>
+      <li class="pull-right"><%= link_to 'Log in', login_path %></li>
+    <% end %>
   </ul>
 </header>

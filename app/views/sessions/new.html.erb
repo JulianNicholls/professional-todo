@@ -1,0 +1,15 @@
+<h1 class="text-center">Log in to Agenda</h1>
+
+<%= form_for :session, url: login_path do |f| %>
+  <p>
+    <%= f.label :email %>
+    <%= f.email_field :email, placeholder: 'Enter your email address', autofocus: true %>
+  </p>
+
+  <p>
+    <%= f.label :password %>
+    <%= f.password_field :password, placeholder: 'Enter your Password' %>
+  </p>
+
+  <%= f.submit 'Log in', class: 'btn' %>
+<% end %>
