@@ -2,10 +2,11 @@
 
 <% @users.each do |user| %>
   <article>
-    <h3><%= link_to user.name, user %></h3>
+    <h2><%= link_to user.name, user %></h2>
     <p>Email Address: <%= user.email %></p>
+    <p><%= pluralize user.todos.count, 'task' %></p>
 
-    <% if logged_in? && current_user == user %>
+    <% if logged_in? && (current_user == user || current_user.admin?) %>
       <div class="actions">
         <%= link_to 'Edit', edit_user_path(user), class: 'btn' %>
         <%= link_to 'Delete', user, class: 'btn', method: :delete, data: { confirm: 'Are you sure?' } %>

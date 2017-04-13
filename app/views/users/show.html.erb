@@ -2,6 +2,10 @@
 
 <p class="text-center">Email Address: <%= @user.email %></p>
 
-<% if logged_in? && current_user == @user %>
+<% if logged_in? && (current_user == @user || current_user.admin?) %>
   <p><%= link_to 'Edit Profile', edit_user_path(@user), class: 'btn' %></p>
 <% end %>
+
+<p>
+  <%= link_to 'Back to User List', users_path, class: 'btn' %>
+</p>
