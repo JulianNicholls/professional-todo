@@ -4,11 +4,13 @@
   <%= simple_format(@todo.description) %>
 </article>
 
-<p class="actions">
-  <%= link_to 'Edit', edit_todo_path(@todo), class: 'btn' %>
-  <%= link_to 'Delete', @todo, class: 'btn', method: :delete, data: { confirm: 'Are you sure?' } %>
-</p>
+<% if logged_in? && current_user == @todo.user %>
+  <p class="actions">
+    <%= link_to 'Edit', edit_todo_path(@todo), class: 'btn' %>
+    <%= link_to 'Delete', @todo, class: 'btn', method: :delete, data: { confirm: 'Are you sure?' } %>
+  </p>
+<% end %>
 
 <p>
-  <%= link_to 'Task List', todos_path %>
+  <%= link_to 'Back to Task List', todos_path, class: 'btn' %>
 </p>

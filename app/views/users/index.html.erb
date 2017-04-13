@@ -4,6 +4,7 @@
   <article>
     <h3><%= link_to user.name, user %></h3>
     <p>Email Address: <%= user.email %></p>
+    <p><%= pluralize user.todos.count, 'task' %></p>
 
     <% if logged_in? && current_user == user %>
       <div class="actions">
