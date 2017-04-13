@@ -2,7 +2,7 @@
 
 <% @users.each do |user| %>
   <article>
-    <h3><%= link_to user.name, user %></h3>
+    <h2><%= link_to user.name, user %></h2>
     <p>Email Address: <%= user.email %></p>
     <p><%= pluralize user.todos.count, 'task' %></p>
 
