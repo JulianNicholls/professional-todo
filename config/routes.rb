@@ -8,8 +8,11 @@ Rails.application.routes.draw do
   get '/about', to: 'pages#about'
   get '/help',  to: 'pages#help'
 
-  get '/signup', to: 'users#new'
+  get '/signup',    to: 'users#new'
   
-  root 'pages#home'
+  get '/login',     to: 'sessions#new'
+  post '/login',    to: 'sessions#create'
+  delete '/logout', to: 'session#destroy'
 
+  root 'pages#home'
 end
