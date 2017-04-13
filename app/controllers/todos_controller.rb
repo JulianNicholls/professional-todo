@@ -1,5 +1,7 @@
 class TodosController < ApplicationController
   before_action :set_todo, only: [:show, :edit, :update, :destroy]
+  before_action :require_user, except: [:index, :show]
+  before_action :require_same_user, only: [:edit, :update, :destroy]
 
   def index
     @todos = Todo.all
@@ -57,5 +59,12 @@ class TodosController < ApplicationController
 
   def set_todo
     @todo = Todo.find params[:id]
+  end
+
+  def require_same_user
+    unless current_user == @todo.user
+      flash[:danger] = 'You can only edit and delete your own tasks'
+      redirect_to todos_path
+    end
   end
 end

@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :require_user, except: [:index, :show]
+  before_action :require_same_user, only: [:edit, :update, :destroy]
 
   def index
     @users = User.all
@@ -51,5 +53,12 @@ class UsersController < ApplicationController
 
   def set_user
     @user = User.find params[:id]
+  end
+
+  def require_same_user
+    unless current_user == @user
+      flash[:danger] = 'You can only edit and delete your own account'
+      redirect_to users_path
+    end
   end
 end
