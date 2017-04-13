@@ -1,7 +1,9 @@
 class User < ApplicationRecord
   before_save { self.email.downcase! }
-  
+
   has_secure_password
+
+  has_many :todos, dependent: :destroy
 
   # A verrry minimal EMAIL Regex
   EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
