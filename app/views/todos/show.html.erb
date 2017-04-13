@@ -4,7 +4,7 @@
   <%= simple_format(@todo.description) %>
 </article>
 
-<% if logged_in? && current_user == @todo.user %>
+<% if logged_in? && (current_user == @todo.user || current_user.admin?) %>
   <p class="actions">
     <%= link_to 'Edit', edit_todo_path(@todo), class: 'btn' %>
     <%= link_to 'Delete', @todo, class: 'btn', method: :delete, data: { confirm: 'Are you sure?' } %>

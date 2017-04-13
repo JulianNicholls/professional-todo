@@ -63,7 +63,7 @@ class TodosController < ApplicationController
   end
 
   def require_same_user
-    unless current_user == @todo.user
+    unless current_user == @todo.user || current_user.admin?
       flash[:danger] = 'You can only edit and delete your own tasks'
       redirect_to todos_path
     end

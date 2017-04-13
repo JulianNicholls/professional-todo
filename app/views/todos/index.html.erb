@@ -8,7 +8,7 @@
 
     <p><%= truncate(task.description, length: 150) %></p>
 
-    <% if logged_in? && current_user == task.user %>
+    <% if logged_in? && (current_user == task.user || current_user.admin?) %>
       <div class="actions">
         <%= link_to 'Edit', edit_todo_path(task), class: 'btn' %>
         <%= link_to 'Delete', task, class: 'btn', method: :delete, data: { confirm: 'Are you sure?' } %>
